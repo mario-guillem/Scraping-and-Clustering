@@ -62,16 +62,16 @@ defensa <- extraer_datos("defense")
 porteros <- extraer_datos("keepers")
 
 tiros$Gls.<- as.numeric(tiros$Gls.)
-regresion<- lm(Gls.~País, data=tiros) #Kosovo***,Noruega**,Polonia***,Japón**,Canadá*,Turquía* 
+regresion<- glm(Gls.~País, data=tiros, family= poisson) 
 summary(regresion)
 
-regresion<- lm(Gls.~Posc, data=tiros) #Falso 9(DL-CC)***, DL ***, PO*
+regresion<- glm(Gls.~Posc, data=tiros, family= poisson) 
 summary(regresion)
 
 
 colnames(pases)[11]<-"por_pases_completados"
 pases$por_pases_completados<- as.numeric(pases$por_pases_completados)
-regresion<- lm(por_pases_completados~Equipo, data=pases) #barcelona, madrid y betis los que mejor la tocan
+regresion<- glm(por_pases_completados~Equipo, data=pases, family= poisson) 
 summary(regresion) 
 
 colnames(defensa)[9]<-"Bloqueos"
@@ -81,7 +81,7 @@ summary(regresion) #no hay significativos
 
 pasess<-pases[,1:11]
 
-pasess <-pases[, c(1:11, 23), drop = FALSE]    #NOUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+pasess <-pases[, c(1:11, 23), drop = FALSE]   
 # Comprobar duplicados
 
 duplicados <- duplicated(tiros$Jugador)
@@ -98,9 +98,9 @@ library(tidyverse)
 tabla_completa<- tiros %>% inner_join(pasess, by ="RL")
 
 "
-He cambiado el método del join, ahora lo hace por 'RL'.
+Método del join, lo hace por 'RL'.
 Hay jugadores que han cambiado de equipo y aparecen repetidos.
-Antes con 'Jugador' el número de observaciones cambiaba porque se repetian
+Realizando el join con 'Jugador' el número de observaciones cambiaba porque se repetian.
 "
 
 defensa <- defensa[, c(1:9, 16), drop = FALSE]
@@ -121,6 +121,6 @@ columnas_seleccionadas <- tabla_completa %>%
 
 tabla_completa <- as.data.frame(tabla_completa)
 
-
+#Guardamos el archivo como datos.Rda
 save(columnas_seleccionadas,file="C:/Users/gomar/OneDrive/Escritorio/BIA/4r curs/1r Quatrimestre/Dades no estructurades/Practica/LALIGAAAA/datos.Rda")
 
