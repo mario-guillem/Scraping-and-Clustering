@@ -3,6 +3,7 @@
 Archivos:
 
 **scraper_bo.R**: contiene la función de mediante la cual se hace web scraping a la web de fbref.com
+  * Además, contiene modelos lineales generalizados
 
 **datos.Rda**: base de datos extraida a partir de *scraper_bo.R*
 
