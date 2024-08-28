@@ -4,6 +4,7 @@ Recopilación de estadísticas de jugadores de fútbol, para posteriormente real
 Todo el proyecto ha sido realizado a través del lenguaje R.
 
 Archivos:
+
 **scraper_bo.R**: scraper a la web de fbref.com
   * Además, contiene modelos lineales generalizados
 
