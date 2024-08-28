@@ -1,16 +1,18 @@
-# DatosNoEstructuras
+# Scraping y Clustering
+
+Recopilación de estadísticas de jugadores de fútbol, para posteriormente realizar limpieza y preparación de los datos para implementar algoritmos de clustering (kmeans).
+Todo el proyecto ha sido realizado a través del lenguaje R.
 
 Archivos:
-
-**scraper_bo.R**: contiene la función de mediante la cual se hace web scraping a la web de fbref.com
+**scraper_bo.R**: scraper a la web de fbref.com
   * Además, contiene modelos lineales generalizados
 
-**datos.Rda**: base de datos extraida a partir de *scraper_bo.R*
+**datos.Rda**: base de datos extraída a partir de *scraper_bo.R*
 
 **analisis_exploratiorio.qmd**: incluye limpieza de datos a partir de *datos.Rda*
 
 **kmeans posiciones.R**: realización de las técnicas de clustering
 
-**Webscraping_y_clustering_aplicado_a_la_liga_española_Javier_Carapeto_Alberto_España_Carles_Gomar_Mario_Guillem.pdf**: PDF final
+**Proyecto.pdf**: archivo donde se describen la metodología, resultados y conclusiones de la investigación.
 
-**Webscraping_y_clustering_aplicado_a_la_liga_española_Javier_Carapeto_Alberto_España_Carles_Gomar_Mario_Guillem.rar**: todos los códigos comprimidos
+"Trabajo realizado conjuntamente con Javier Carapeto, Alberto España y Carles Gomar."
